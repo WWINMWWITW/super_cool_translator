@@ -1,7 +1,7 @@
 import gradio as gr
 import requests
 import json
-
+import os
 
 css = """
 
@@ -175,4 +175,11 @@ with gr.Blocks() as main:
         api_name="translate",
     )
 
-main.launch(css=css, theme=theme, share=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    main.launch(
+        css=css, 
+        theme=theme, 
+        server_name="0.0.0.0", 
+        server_port=port
+    )
