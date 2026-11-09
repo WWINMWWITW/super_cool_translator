@@ -175,4 +175,4 @@ with gr.Blocks() as main:
         api_name="translate",
     )
 
-main.launch(css=css, theme=theme)
+main.launch(css=css, theme=theme, share=True)
